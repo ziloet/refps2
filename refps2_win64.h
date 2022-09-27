@@ -1,0 +1,30 @@
+#define DEBUG_BREAK(...) __debugbreak()
+#define REFPS2_WNDCLASS_NAME L"refps2_wndclass_name"
+
+enum window_menu_items
+{
+  MENUITEM_FILE_EXIT      = 10003,
+  MENUITEM_FILE_RUN       = 10004,
+
+  MENUITEM_CDVD_LOAD_ISO  = 9001,
+  MENUITEM_CDVD_LOAD_ELF  = 9002,
+  MENUITEM_CDVD_LOAD_BIOS = 9005,
+
+  MENUITEM_CONFIG_VIDEO   = 9053,
+  MENUITEM_CONFIG_SOUND   = 9026,
+  MENUITEM_CONFIG_INPUT   = 9034,
+
+  MENUITEM_DEBUG_SHOWCONSOLE = 10010,
+};
+
+enum dialogs_id
+{
+  DIALOG_ID_SETTINGS = 2041,
+
+};
+
+
+enum custom_win32_messages
+{
+  WM_BROWSEFILE = WM_USER,
+};

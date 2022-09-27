@@ -1,0 +1,66 @@
+DEFINE_MIPS_INSTRUCTION(CACHE)
+{
+  NOT_IMMPLEMENTED_YET();
+}
+
+DEFINE_MIPS_INSTRUCTION(LQ)
+{
+  NOT_IMMPLEMENTED_YET();
+}
+
+DEFINE_MIPS_INSTRUCTION(LQC2)
+{
+  NOT_IMMPLEMENTED_YET();
+}
+
+DEFINE_MIPS_INSTRUCTION(LWC1)
+{
+  NOT_IMMPLEMENTED_YET();
+}
+
+DEFINE_MIPS_INSTRUCTION(MFSA)
+{
+  NOT_IMMPLEMENTED_YET();
+  uint32_t Result = CPU->SA.U32;
+  CPU->Registers[_RD_].U32[0] = Result;
+}
+
+DEFINE_MIPS_INSTRUCTION(MTSA)
+{
+  NOT_IMMPLEMENTED_YET();
+  uint32_t Result = CPU->Registers[_RS_].U32[0];
+  CPU->SA.U32 = Result;
+}
+
+DEFINE_MIPS_INSTRUCTION(MTSAB)
+{
+  NOT_IMMPLEMENTED_YET();
+  uint32_t Value1 = CPU->Registers[_RS_].U32[0] & 0xf;
+  uint32_t Value2 = (uint32_t)_IMMEDIATE_ & 0xf;
+  uint32_t Result = (Value1 ^ Value2) << 3;
+  CPU->SA.U32 = Result;
+}
+
+DEFINE_MIPS_INSTRUCTION(MTSAH)
+{
+  NOT_IMMPLEMENTED_YET();
+  uint32_t Value1 = CPU->Registers[_RS_].U32[0] & 0x7;
+  uint32_t Value2 = (uint32_t)_IMMEDIATE_ & 0x7;
+  uint32_t Result = (Value1 ^ Value2) << 4;
+  CPU->SA.U32 = Result;
+}
+
+DEFINE_MIPS_INSTRUCTION(SQ)
+{
+  NOT_IMMPLEMENTED_YET();
+}
+
+DEFINE_MIPS_INSTRUCTION(SQC2)
+{
+  NOT_IMMPLEMENTED_YET();
+}
+
+DEFINE_MIPS_INSTRUCTION(SWC1)
+{
+  NOT_IMMPLEMENTED_YET();
+}

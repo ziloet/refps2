@@ -1,0 +1,39 @@
+#define TLB_ENTRIES_COUNT 48
+
+enum user_space
+{
+  USER_SPACE_BEGIN = 0x00000000,
+  USER_SPACE_END   = 0x7fffffff,
+};
+
+enum supervisor_space
+{
+  SUPERVISOR_SPACE_USER_BEGIN     = 0x00000000,
+  SUPERVISOR_SPACE_USER_END       = 0x7fffffff,
+  SUPERVISOR_SPACE_SEGMENT_BEGIN  = 0xc0000000,
+  SUPERVISOR_SPACE_SEGMENT_END    = 0xdfffffff,
+};
+
+enum kernel_space
+{
+  KERNEL_SPACE_USER_BEGIN       = 0x00000000,
+  KERNEL_SPACE_USER_END         = 0x7fffffff,
+  KERNEL_SPACE_SEGMENT0_BEGIN   = 0x80000000,
+  KERNEL_SPACE_SEGMENT0_END     = 0x9fffffff,
+  KERNEL_SPACE_SEGMENT1_BEGIN   = 0xa0000000,
+  KERNEL_SPACE_SEGMENT1_END     = 0xbfffffff,
+  KERNEL_SPACE_SEGMENT_BEGIN    = 0xc0000000,
+  KERNEL_SPACE_SEGMENT_END      = 0xdfffffff,
+  KERNEL_SPACE_SEGMENT3_BEGIN   = 0xe0000000,
+  KERNEL_SPACE_SEGMENT3_END     = 0xffffffff,
+};
+
+enum tlb_cache_mode
+{
+  TLB_CACHE_MODE_UNCACHED = 2,
+  TLB_CACHE_MODE_CACHED_WRITE_BACK_ALLOCATE = 3,
+  TLB_CACHE_MODE_UNCACHED_ACCELERATED = 7,
+}
+
+typedef uint32_t tlb_entry[4];
+typedef tlb_entry tlb[48];
